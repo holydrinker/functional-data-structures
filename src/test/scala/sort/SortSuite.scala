@@ -53,4 +53,11 @@ class SortSuite extends FunSuite {
     assert(actual == expected)
   }
 
+  test ("bubble sort works on n-duplicate-items list and others") {
+    val xs = List(2, 1, 1, 1, 1, 1, 1, 1)
+    val actual = bubblesort(xs)
+    val expected = List(1, 1, 1, 1, 1, 1, 1, 2)
+    assert(actual == expected)
+  }
+
 }
