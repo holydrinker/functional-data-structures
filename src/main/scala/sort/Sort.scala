@@ -10,9 +10,8 @@ object Sort {
 
   def bubblesort(xs: List[Int]): List[Int] = {
     def oneRound(xs: List[Int]): List[Int] = xs match {
-      case Nil => Nil
-      case List(x) => List(x)
-      case h :: t => if (h > t.head) t.head :: oneRound(h :: t.tail) else h :: oneRound(t)
+      case h1 :: h2 :: t => if (h1 > h2) h2 :: oneRound(h1 :: t) else h1 :: oneRound(h2 :: t)
+      case _ => xs
     }
 
     if(isSorted(xs)) xs
